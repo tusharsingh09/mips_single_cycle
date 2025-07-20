@@ -3,13 +3,21 @@
 
 module DataMemory(
     input wire clk,
+    input wire reset,
     input wire [31:0] addr,
     input wire we,
     input wire [31:0] data,
     output wire[31:0] rd
 );
 
-reg [31:0] memory [2*32-1:0];
+// Limit this to 16 as well
+reg [31:0] memory [2*16-1:0];
+integer i;
+
+always@(posedge clk or posedge reset) begin
+    if(reset) for(i=0;i<2*16-1;i=i+1) memory[i] <= 32'd0;
+    else if(we) memory[addr] <= data;
+end
 
 assign rd = memory[addr];
 

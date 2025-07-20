@@ -49,6 +49,7 @@ InstructionMemory instr_mem(PC, instruction);
 
 DataMemory data_mem(
     clk,
+    reset,
     ALUOut,
     MemWrite,
     WriteData,
