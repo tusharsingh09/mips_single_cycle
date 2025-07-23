@@ -21,7 +21,7 @@ always@(posedge clk or posedge reset) begin
     else if(we) memory[addr] <= data;
     
 `ifdef DEBUG_DATAMEM
-    $writememh("data.hex", memory, 0, 2**16-1);
+    $writememh("./debug/data.hex", memory, 0, 2**16-1);
 `endif
 end
 

@@ -20,7 +20,7 @@ always@(posedge clk or posedge reset) begin
         for(i=0;i<31;i=i+1) memory[i] <= 32'd0;
     end else if(we3) memory[addr3] <= data;
 `ifdef DEBUG_REGFILE
-    $writememh("registers.hex", memory, 0, 31);
+    $writememh("./debug/registers.hex", memory, 0, 31);
 `endif
 end
 
