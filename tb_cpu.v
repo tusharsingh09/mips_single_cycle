@@ -4,6 +4,7 @@
 module tb_cpu();
 
 reg clk, reset;
+reg [31:0] main_memory[0:256];
 
 CPU dut(
     clk, 

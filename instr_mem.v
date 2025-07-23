@@ -10,7 +10,7 @@ module InstructionMemory(
 // this should be ideally [2**32-1:0] but since verilog cannot have arrays this big
 // we use only 16 LSB
 reg [31:0] memory [2**16-1:0];
-initial $readmemh("./instruction.hex", memory, 0, 2);
+initial $readmemh("./instruction.hex", memory, 0, 3);
 
 assign out = memory[addr[31:2]];
 
