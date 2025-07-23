@@ -12,7 +12,7 @@ module InstructionMemory(
 reg [31:0] memory [2**16-1:0];
 initial $readmemh("./instruction.hex", memory, 0, 2);
 
-assign out = memory[addr];
+assign out = memory[addr[31:2]];
 
 endmodule
 

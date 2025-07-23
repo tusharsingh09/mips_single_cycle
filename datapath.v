@@ -40,7 +40,7 @@ SignExtend sign_extend(instruction[15:0], SigImm);
 
 // to select what value to give to PC
 // i accidentally made INstruction memory word addressable T-T gotta remove the multiplier of 4
-Mux32 pc_mux(current_pc+1, (current_pc+1+SigImm), alu_zero&Branch, next_pc);
+Mux32 pc_mux(current_pc+4, (current_pc+4+(SigImm*4)), alu_zero&Branch, next_pc);
 
 // to select what to give into WD3 of register file
 Mux5 reg_file_mux(instruction[20:16], instruction[15:11], RegDest, addr3);
