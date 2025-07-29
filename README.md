@@ -1,7 +1,6 @@
-# MIPS Single Cycle 32-bit Processor (Verilog)
+# MIPS Single Cycle 32-Bit Core (Verilog)
 ## Overview
 This is a single cycle implementation of a minimal MIPS architecture CPU consisting of 9 instructions.
-This project follows a boilerplate approach.
 
 ## Tools Used
 **Icarus Verilog** for simulation.<br>
@@ -34,3 +33,6 @@ This project follows a boilerplate approach.
 ## Future Plans
 1. Add caching
 2. More instructions
+
+# References
+[1] Digital Design and Computer Architecture - David Money Harris & Sarah L. Harris
